@@ -2,7 +2,6 @@
   "name": "gui",
   "version": "1.0.0",
   "main": "main.js",
-  
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,6 +20,7 @@
       "icon": "assets/app-icon.ico"
     },
     "files": [
+      "main.js",
       "dist/**/*",
       "node_modules/**/*",
       "assets/**/*"
@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "electron-builder": "^25.1.8",
-    
     "electron": "^34.0.2"
   }
 }

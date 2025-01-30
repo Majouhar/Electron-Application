@@ -16,12 +16,13 @@
   <body>
     <div id="content">Loading...</div>
     <script>
-      window.electron.onUserData((event, userData) => {
+      window.electron.onUserData((event, { userData, osUsername }) => {
         const content = document.getElementById("content");
         console.log(userData + " HI"); // Log user data to verify
         if (userData) {
           content.innerHTML = `
           <div class="user">
+            <h1>${osUsername}</h1>
             <h2>${userData.login}</h2>
             <p><strong>Public Repos:</strong> ${userData.public_repos}</p>
             <p><strong>Bio:</strong> ${userData.bio || "N/A"}</p>
