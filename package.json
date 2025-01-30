@@ -1,0 +1,35 @@
+{
+  "name": "gui",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "electron": "^34.0.2"
+  },
+  "build": {
+    "appId": "com.example.trayiconapp",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/app-icon.ico"
+    },
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "assets/**/*"
+    ],
+    "directories": {
+      "output": "build"
+    }
+  },
+  "devDependencies": {
+    "electron-builder": "^25.1.8"
+  }
+}

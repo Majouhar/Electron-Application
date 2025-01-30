@@ -1,0 +1,36 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GitHub User Details</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .user {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">Loading...</div>
+    <script>
+      window.electron.onUserData((event, userData) => {
+        const content = document.getElementById("content");
+        console.log(userData + " HI"); // Log user data to verify
+        if (userData) {
+          content.innerHTML = `
+          <div class="user">
+            <h2>${userData.login}</h2>
+            <p><strong>Public Repos:</strong> ${userData.public_repos}</p>
+            <p><strong>Bio:</strong> ${userData.bio || "N/A"}</p>
+          </div>
+        `;
+        } else {
+          content.innerHTML = "<p>Error fetching user details.</p>";
+        }
+      });
+    </script>
+  </body>
+</html>
